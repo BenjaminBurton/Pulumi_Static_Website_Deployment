@@ -28,8 +28,8 @@ Deploy a blazing-fast static website to AWS using Pulumi, S3, and CloudFront. Th
 
 First thing we have to do is configure access through IAM
 then create a EC2 on AWS
-[https://www.pulumi.com/docs/iac/clouds/aws/](https://www.pulumi.com/docs/iac/clouds/aws/)
-[https://www.pulumi.com/docs/iac/get-started/aws/](https://www.pulumi.com/docs/iac/get-started/aws/)
+[Cloud AWS](https://www.pulumi.com/docs/iac/clouds/aws/)
+[Getting Started AWS](https://www.pulumi.com/docs/iac/get-started/aws/)
 
 ```bash
 curl -fsSL https://get.pulumi.com | sh
@@ -57,7 +57,7 @@ pulumi version
 and we will get back the version `v3.160.0` showing it is now installed correctly
 
 then install Node js
-[https://nodejs.org/en/download](https://nodejs.org/en/download)
+[Download](https://nodejs.org/en/download)
 
 ```bash
 # Download and install nvm:
@@ -78,7 +78,7 @@ npm -v # Should print "10.9.2".
 ```
 
 then setup IAM programmatic access
-[https://www.pulumi.com/docs/iac/get-started/aws/begin/](https://www.pulumi.com/docs/iac/get-started/aws/begin/)
+[AWS Begin](https://www.pulumi.com/docs/iac/get-started/aws/begin/)
 
 ```bash
 export AWS_ACCESS_KEY_ID="<YOUR_ACCESS_KEY_ID>" &&
@@ -86,7 +86,7 @@ export AWS_SECRET_ACCESS_KEY="<YOUR_SECRET_ACCESS_KEY>"
 ```
 
 then create a new project
-[https://www.pulumi.com/docs/iac/get-started/aws/create-project/](https://www.pulumi.com/docs/iac/get-started/aws/create-project/)
+[Create Project](https://www.pulumi.com/docs/iac/get-started/aws/create-project/)
 
 we will use typescript for this project
 
@@ -97,14 +97,18 @@ mkdir quickstart && cd quickstart && pulumi new aws-typescript
 it may ask to login to Pulumi Cloud if this is your first time just make sure you are logged in to your account so you can create the Token then
 enter pulumi access token
 then it will go through the prompts to create the project
-project name => pul-challenge-aws
-project description
-stack name => org-name/dev
-The package manager to use for installing dependencies => npm
-The AWS region to deploy into (aws:region) (us-east-1)
+
+- project name => pul-challenge-aws
+- project description
+- stack name => org-name/dev
+- The package manager to use for installing dependencies => npm
+- The AWS region to deploy into (aws:region) (us-east-1)
+
+The terminal should have this showing below
 Saved config
 Installing dependencies...
 npm notice To update run: npm install -g npm@11.2.0
+so install npm version 11.2.0
 
 ```bash
 npm install -g npm@11.2.0
@@ -120,7 +124,7 @@ package.json
 tsconfig.json
 
 this will give you files you need for review
-[https://www.pulumi.com/docs/iac/get-started/aws/review-project/](https://www.pulumi.com/docs/iac/get-started/aws/review-project/)
+[Review Project](https://www.pulumi.com/docs/iac/get-started/aws/review-project/)
 
 ```bash
 import * as pulumi from "@pulumi/pulumi";
@@ -135,7 +139,7 @@ export const bucketName = bucket.id;
 ```
 
 then we will deploy our stack which will provision it
-[https://www.pulumi.com/docs/iac/get-started/aws/deploy-stack/](https://www.pulumi.com/docs/iac/get-started/aws/deploy-stack/)
+[Deploy Stack](https://www.pulumi.com/docs/iac/get-started/aws/deploy-stack/)
 
 ```bash
 pulumi up
@@ -150,13 +154,13 @@ pulumi stack output bucketName
 ```
 
 then we can modify the program as we need
-[https://www.pulumi.com/docs/iac/get-started/aws/modify-program/](https://www.pulumi.com/docs/iac/get-started/aws/modify-program/)
+[Modify Program](https://www.pulumi.com/docs/iac/get-started/aws/modify-program/)
 
 then redeploy the changes
-[https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
+[Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
 
 once the update is complete we can verify the object was created
-[https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
+[Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
 
 ```bash
 aws s3 ls $(pulumi stack output bucketName)
@@ -217,7 +221,7 @@ curl $(pulumi stack output bucketEndpoint)
 ```
 
 Next, you’ll destroy the resources.
-[https://www.pulumi.com/docs/iac/get-started/aws/destroy-stack/](https://www.pulumi.com/docs/iac/get-started/aws/destroy-stack/)
+[Destory Stack](https://www.pulumi.com/docs/iac/get-started/aws/destroy-stack/)
 
 ```bash
 pulumi destroy
