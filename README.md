@@ -28,8 +28,9 @@ Deploy a blazing-fast static website to AWS using Pulumi, S3, and CloudFront. Th
 
 First thing we have to do is configure access through IAM
 then create a EC2 on AWS
-[Cloud AWS](https://www.pulumi.com/docs/iac/clouds/aws/)
-[Getting Started AWS](https://www.pulumi.com/docs/iac/get-started/aws/)
+
+- [Cloud AWS](https://www.pulumi.com/docs/iac/clouds/aws/)
+- [Getting Started AWS](https://www.pulumi.com/docs/iac/get-started/aws/)
 
 ```bash
 curl -fsSL https://get.pulumi.com | sh
@@ -57,7 +58,8 @@ pulumi version
 and we will get back the version `v3.160.0` showing it is now installed correctly
 
 then install Node js
-[Download](https://nodejs.org/en/download)
+
+- [Download](https://nodejs.org/en/download)
 
 ```bash
 # Download and install nvm:
@@ -78,7 +80,8 @@ npm -v # Should print "10.9.2".
 ```
 
 then setup IAM programmatic access
-[AWS Begin](https://www.pulumi.com/docs/iac/get-started/aws/begin/)
+
+- [AWS Begin](https://www.pulumi.com/docs/iac/get-started/aws/begin/)
 
 ```bash
 export AWS_ACCESS_KEY_ID="<YOUR_ACCESS_KEY_ID>" &&
@@ -86,7 +89,8 @@ export AWS_SECRET_ACCESS_KEY="<YOUR_SECRET_ACCESS_KEY>"
 ```
 
 then create a new project
-[Create Project](https://www.pulumi.com/docs/iac/get-started/aws/create-project/)
+
+- [Create Project](https://www.pulumi.com/docs/iac/get-started/aws/create-project/)
 
 we will use typescript for this project
 
@@ -124,7 +128,8 @@ package.json
 tsconfig.json
 
 this will give you files you need for review
-[Review Project](https://www.pulumi.com/docs/iac/get-started/aws/review-project/)
+
+- [Review Project](https://www.pulumi.com/docs/iac/get-started/aws/review-project/)
 
 ```bash
 import * as pulumi from "@pulumi/pulumi";
@@ -139,7 +144,8 @@ export const bucketName = bucket.id;
 ```
 
 then we will deploy our stack which will provision it
-[Deploy Stack](https://www.pulumi.com/docs/iac/get-started/aws/deploy-stack/)
+
+- [Deploy Stack](https://www.pulumi.com/docs/iac/get-started/aws/deploy-stack/)
 
 ```bash
 pulumi up
@@ -154,13 +160,16 @@ pulumi stack output bucketName
 ```
 
 then we can modify the program as we need
-[Modify Program](https://www.pulumi.com/docs/iac/get-started/aws/modify-program/)
+
+- [Modify Program](https://www.pulumi.com/docs/iac/get-started/aws/modify-program/)
 
 then redeploy the changes
-[Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
+
+- [Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
 
 once the update is complete we can verify the object was created
-[Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
+
+- [Deploy Changes](https://www.pulumi.com/docs/iac/get-started/aws/deploy-changes/)
 
 ```bash
 aws s3 ls $(pulumi stack output bucketName)
@@ -221,7 +230,8 @@ curl $(pulumi stack output bucketEndpoint)
 ```
 
 Next, you’ll destroy the resources.
-[Destory Stack](https://www.pulumi.com/docs/iac/get-started/aws/destroy-stack/)
+
+- [Destory Stack](https://www.pulumi.com/docs/iac/get-started/aws/destroy-stack/)
 
 ```bash
 pulumi destroy
